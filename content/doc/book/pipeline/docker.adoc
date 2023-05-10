@@ -293,9 +293,9 @@ image::pipeline/configure-docker-label.png[Configuring the Pipeline Docker Label
 
 The `/usr/local/bin` directory is not included in the macOS `PATH` for Docker images by default.
 If executables from `/usr/local/bin` need to be called from within Jenkins, then the `PATH` needs to be extended to include `/usr/local/bin`.
-Add a path node in the file "/usr/local/Cellar/jenkins-lts/XXX/homebrew.mxcl.jenkins-lts.plist" like this:
+Add a path node in the file "/usr/local/Cellar/jenkins/NNN/homebrew.mxcl.jenkins-lts.plist" (where NNN is replaced withe the version number) like this:
 
-.Contents of homebrew.mxcl.jenkins-lts.plist
+.Contents of homebrew.mxcl.jenkins.plist
 [source,xml]
 ----
 <key>EnvironmentVariables</key>
@@ -315,7 +315,7 @@ The revised `PATH` `string` should be a colon separated list of directories in t
 * `/Applications/Docker.app/Contents/Resources/bin/`
 * `/Users/XXX/Library/Group\ Containers/group.com.docker/Applications/Docker.app/Contents/Resources/bin` (where `XXX` is replaced by your user name)
 
-Now restart jenkins using "brew services restart jenkins-lts" 
+Now restart jenkins using "brew services restart jenkins" 
 
 == Advanced Usage with Scripted Pipeline
 
